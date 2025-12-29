@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Express Frontend</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Express + Flask App</h1>
+<button onclick="callBackend()">Call Flask Backend</button>
+
+<p id="result"></p>
+
+<script>
+function callBackend() {
+    fetch("http://localhost:5000/api/hello")
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById("result").innerText = data.message;
+        });
+}
+</script>
+
+</body>
+</html>

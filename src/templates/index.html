@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>submit data </title>
+</head>
+<body>
+   <h2>Submit to mongodb atlas </h2>
+   {% if error %}
+   <div class="error">
+    <strong>Error:</strong>{{ error }}
+   </div>
+   {% endif %}
+   <form action="/submit" method="post">
+    <div class="form-group">
+<label for="user_data">Enter data:</label>
+<input type="text" name="user_data" id="user_data">
+    </div>
+    <button type="submit">submit</button>
+   </form>
+   <hr>
+   <p><a href="/api">view api json list</a></p>
+    
+</body>
+<style>
+   .error { color: red; border: 1px solid red; padding: 10px; margin-bottom: 10px; }
+        .form-group { margin-bottom: 15px; }
+</style>
+</html>
